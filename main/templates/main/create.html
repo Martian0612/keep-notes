@@ -1,0 +1,46 @@
+{% extends "main/base.html"%}
+
+
+{% block title%} Create {% endblock%}
+
+{% block content%} 
+
+{% comment %} <div class="alert alert-success" role="alert">
+    {% if messages %}
+        {% for message in messages %}
+            <strong> {{message}} </strong>
+        {% endfor%}
+    {% endif%}
+</div> {% endcomment %}
+
+{% comment %} I want to create a success alert message here, so that after creating the to do list, I can cancel it and need not to be refresh it. {% endcomment %}
+
+{% comment %} Create Page
+<form method = "post" action = "/create">
+    {% csrf_token%}
+    {{form.as_p}}
+    <button type = "submit", name = "save"> Create New Item </button>
+    <p>
+        {% if messages %}
+            {% for message in messages %}
+                <strong> {{message}} </strong>
+            {% endfor%}
+        {% endif%}
+    </p>
+    
+</form>
+{% endblock%} {% endcomment %}
+
+
+<h3>Create Page</h3>
+<form method = "post" action = "/create" class = "form-group">
+    {% csrf_token%}
+    <div class="input-group mb-3">
+        <div class= "input-group-prepend">
+            <button type = "submit", name = "save" class = "btn btn-success"> Create New Item </button>
+        </div>
+        {{form.name}}
+    </div>
+  
+</form>
+{% endblock%}

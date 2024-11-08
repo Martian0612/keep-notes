@@ -1,0 +1,14 @@
+{% extends "main/base.html" %}
+
+{% block title%}
+View
+{% endblock title %}
+
+{% block content %}
+    <h4> Click on the name of the to do list below to see the items. </h4>
+    {% for td in user.todolist.all %}
+    
+    <p> <a href = "/{{td.id}}" >{{td.name}}</a> </p>
+         
+    {% endfor %}
+{% endblock content %}
